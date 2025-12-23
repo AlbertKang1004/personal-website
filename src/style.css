@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+
+/* Ensure smooth scrolling on the root element as a fallback */
+/* html { scroll-behavior: smooth; } */
+
 /* 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
