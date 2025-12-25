@@ -1,3 +1,5 @@
+import githubIcon from "../../assets/img/github-icon.png";
+
 function ProjectCard({ title, githubLink, image, description }) {
   return (
     <div
@@ -19,7 +21,7 @@ function ProjectCard({ title, githubLink, image, description }) {
             className="inline-flex items-center p-2 rounded-md bg-gray-800 hover:bg-gray-700 transition-colors"
           >
             <img
-              src="/personal-website/img/github-sign.png"
+              src={githubIcon}
               alt="github icon"
               className="w-6 h-6 opacity-80 hover:opacity-100"
             />
