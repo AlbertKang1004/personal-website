@@ -1,19 +1,19 @@
 import githubIcon from "../../assets/img/github-icon.png";
 
-function ProjectCard({ title, githubLink, image, description }) {
+function ProjectCard({ id, title, githubLink, image, description }) {
   return (
     <div
-      id="project"
+      id={"project-" + id}
       className="flex flex-col items-start justify-start p-6 bg-linear-to-br from-gray-800 via-gray-900 to-black rounded-2xl w-full h-full hover:shadow-2xl shadow-black transition-shadow duration-300 border border-gray-700"
     >
       <div
-        id="project-title-section"
+        id={"project-" + id + "-title-section"}
         className="flex w-full items-center justify-between gap-4"
       >
-        <div id="project-title" className="text-white text-2xl font-semibold">
+        <div id={"project-" + id + "-title"} className="text-white text-2xl font-semibold">
           {title}
         </div>
-        <div id="project-title-link">
+        <div id={"project-" + id + "-title-link"}>
           <a
             href={githubLink}
             target="_blank"
@@ -29,13 +29,13 @@ function ProjectCard({ title, githubLink, image, description }) {
         </div>
       </div>
       <div
-        id="project-image"
+        id={"project-" + id + "-image"}
         className="w-full h-40 mt-4 border-2 border-dashed border-gray-600 rounded-lg flex items-center justify-center text-gray-500 bg-gray-800"
       >
         {image ? <img src={image} alt="Project Screenshot" className="max-h-full max-w-full" /> : null}
       </div>
       <div
-        id="project-content"
+        id={"project-" + id + "-content"}
         className="mt-6 text-gray-300 leading-relaxed text-sm min-h-20"
       >
         {description}
