@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from './components/sections/Header';
 import MainPage from './components/sections/MainPage';
 import AboutMe from './components/sections/AboutMe';
