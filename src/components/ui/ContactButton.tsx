@@ -1,6 +1,13 @@
-import React from "react";
+import React from 'react';
 
-export default function ContactButton({ id, title, link, imgSrc }) {
+interface ContactButtonProps {
+  id?: string;
+  title: string;
+  link: string;
+  imgSrc: string;
+}
+
+export default function ContactButton({ id, title, link, imgSrc }: ContactButtonProps): React.ReactElement {
   return (
     <div id={id} className="w-40 h-40 mx-15">
       <a href={link}>

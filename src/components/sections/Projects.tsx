@@ -1,6 +1,15 @@
-import ProjectCard from "../ui/ProjectCard";
+import React from 'react';
+import ProjectCard from "../ui/ProjectCard.js";
 
-const projectData = [
+type Project = {
+  id: string;
+  title: string;
+  link: string;
+  image?: string;
+  desc: string;
+};
+
+const projectData: Project[] = [
   {
     id: "mazesolver",
     title: "MazeSolver",
@@ -31,15 +40,15 @@ const projectData = [
   },
 ];
 
-export default function Projects() {
+export default function Projects(): React.ReactElement {
   return (
     <div
       id="projects-container"
       className="grid grid-cols-2 grid-rows-2 gap-20 p-20 items-center justify-center h-screen scroll-mt-16"
     >
-      {projectData.map((project, index) => (
+      {projectData.map((project) => (
         <ProjectCard
-          key={index}
+          key={project.id}
           id={project.id}
           title={project.title}
           githubLink={project.link}

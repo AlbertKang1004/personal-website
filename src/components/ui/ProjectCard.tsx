@@ -1,6 +1,15 @@
+import React from 'react';
 import githubIcon from "../../assets/img/github-icon.png";
 
-function ProjectCard({ id, title, githubLink, image, description }) {
+type ProjectCardProps = {
+  id: string;
+  title: string;
+  githubLink: string;
+  image?: string;
+  description: string;
+};
+
+export default function ProjectCard({ id, title, githubLink, image, description }: ProjectCardProps): React.ReactElement {
   return (
     <div
       id={"project-" + id}
@@ -43,5 +52,3 @@ function ProjectCard({ id, title, githubLink, image, description }) {
     </div>
   );
 }
-
-export default ProjectCard;

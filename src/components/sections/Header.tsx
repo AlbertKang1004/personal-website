@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header() {
+export default function Header(): React.ReactElement {
   return (
     <header className="flex z-10 fixed top-0 left-0 w-full h-16 justify-center items-center border-b border-gray-600 bg-gray-900">
       <nav className="text-white">
@@ -11,4 +11,4 @@ export default function Header() {
       </nav>
     </header>
   );
-}
+} 

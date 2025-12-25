@@ -1,9 +1,17 @@
-import ContactButton from "../ui/ContactButton";
+import React from 'react';
+import ContactButton from "../ui/ContactButton.js";
 import githubIcon from "../../assets/img/github-icon.png";
 import emailIcon from "../../assets/img/email-icon.png";
 import linkedinIcon from "../../assets/img/linkedin-icon.png";
 
-const ContactData = [
+type Contact = {
+  id: string;
+  title: string;
+  link: string;
+  imgSrc: string;
+};
+
+const ContactData: Contact[] = [
   {
     id: "contact-github",
     title: "GitHub",
@@ -24,7 +32,7 @@ const ContactData = [
   },
 ];
 
-export default function Contacts() {
+export default function Contacts(): React.ReactElement {
   return (
     <div
       id="contacts-container"
@@ -32,6 +40,7 @@ export default function Contacts() {
     >
       {ContactData.map((contact) => (
         <ContactButton
+          key={contact.id}
           id={contact.id}
           title={contact.title}
           link={contact.link}
