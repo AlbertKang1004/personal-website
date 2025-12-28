@@ -11,7 +11,7 @@ export default function Chip({ text, icon }: ChipProps) {
       {icon ? (
         <span className="mr-2 h-4 w-4">
           <i
-            className={`devicon-${icon}-plain colored text-s`}
+            className={`devicon-${icon}-plain colored text-sm`}
             aria-hidden="true"
           ></i>
         </span>

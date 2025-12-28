@@ -29,7 +29,7 @@ export default function MainPage(): React.ReactElement {
   return (
     <div
       id="main-page"
-      className="px-5 bg-linear-to-br from-neutral-800 to-black grid grid-rows-[1fr_1fr_2fr] justify-center h-screen pt-16"
+      className="px-5 bg-linear-to-tl from-[#1a0b2e] to-black grid grid-rows-[1fr_1fr_2fr] justify-center h-screen pt-16"
     >
       {/* Title + Description of Main Page */}
       <div className="self-end font-title text-7xl font-extrabold">
@@ -38,7 +38,7 @@ export default function MainPage(): React.ReactElement {
         KANG
       </div>
       <div className="font-desc text-xl font-light text-gray-400 pt-4 uppercase">
-        Software Developer | Computer Science Student at the University of
+        Software Developer | Computer Science Specialist in University of
         Toronto
       </div>
       <div className="self-center flex flex-wrap gap-2 h-fit justify-center w-full">
