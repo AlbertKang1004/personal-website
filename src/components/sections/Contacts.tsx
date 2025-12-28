@@ -36,7 +36,7 @@ export default function Contacts(): React.ReactElement {
   return (
     <div
       id="contacts-container"
-      className="flex flex-row items-center justify-center h-screen scroll-mt-16"
+      className="flex flex-col md:flex-row items-center justify-center h-screen scroll-mt-16"
     >
       {ContactData.map((contact) => (
         <ContactButton

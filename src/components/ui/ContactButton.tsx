@@ -9,8 +9,8 @@ interface ContactButtonProps {
 
 export default function ContactButton({ id, title, link, imgSrc }: ContactButtonProps): React.ReactElement {
   return (
-    <div id={id} className="w-40 h-40 mx-15">
-      <a href={link}>
+    <div id={id} className="w-20 md:w-40 h-20 md:h-40 my-5 md:mx-15">
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           src={imgSrc}
           alt={title}
