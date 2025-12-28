@@ -15,9 +15,14 @@ const SkillData: Skill[] = [
   { icon: "python", text: "Python" },
   { icon: "java", text: "Java" },
   { icon: "tailwindcss", text: "Tailwind" },
+  { icon: "numpy", text: "NumPy" },
+  { icon: "pandas", text: "Pandas" },
   { icon: "git", text: "Git" },
+  { icon: "github", text: "GitHub" },
   { icon: "r", text: "R" },
-  { icon: "typescript", text: "Typescript" },
+  { icon: "typescript", text: "TypeScript" },
+  { icon: "vscode", text: "VS Code" },
+  { icon: "visualstudio", text: "Visual Studio" },  
 ];
 
 export default function MainPage(): React.ReactElement {
@@ -36,7 +41,7 @@ export default function MainPage(): React.ReactElement {
         Software Developer | Computer Science Student at the University of
         Toronto
       </div>
-      <div className="flex flex-wrap gap-2 h-fit justify-center w-full">
+      <div className="self-center flex flex-wrap gap-2 h-fit justify-center w-full">
         {SkillData.map((skill) => (
           <Chip key={skill.icon} icon={skill.icon} text={skill.text} />
         ))}
