@@ -22,7 +22,7 @@ const SkillData: Skill[] = [
   { icon: "r", text: "R" },
   { icon: "typescript", text: "TypeScript" },
   { icon: "vscode", text: "VS Code" },
-  { icon: "visualstudio", text: "Visual Studio" },  
+  { icon: "visualstudio", text: "Visual Studio" },
 ];
 
 export default function MainPage(): React.ReactElement {
