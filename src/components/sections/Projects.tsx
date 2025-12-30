@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from "react";
 import ProjectCard from "../ui/ProjectCard.js";
 
 type Project = {
@@ -41,21 +41,64 @@ const projectData: Project[] = [
 ];
 
 export default function Projects(): React.ReactElement {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const width = container.clientWidth;
+      const scrollLeft = container.scrollLeft;
+      const index = Math.round(scrollLeft / width);
+      setActiveIndex(index);
+    }
+  };
+
   return (
-    <div
-      id="projects-container"
-      className="grid md:grid-cols-2 md:grid-rows-2 gap-20 p-20 items-center justify-center h-screen scroll-mt-16"
-    >
-      {projectData.map((project) => (
-        <ProjectCard
-          key={project.id}
-          id={project.id}
-          title={project.title}
-          githubLink={project.link}
-          image={project.image}
-          description={project.desc}
-        />
-      ))}
+    <div id="projects-container" className="flex flex-col justify-center bg-black pt-16 h-screen">
+      {/* THE SLIDER WINDOW 
+          - flex: puts cards in a row
+          - overflow-x-auto: enables horizontal swiping
+          - snap-x snap-mandatory: forces cards to stop in the center
+          - no-scrollbar: (Ensure you have the CSS utility for this)
+      */}
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="flex overflow-x-auto snap-x snap-mandatory gap-5 px-6 no-scrollbar pb-5"
+      >
+        {projectData.map((project) => (
+          /* CARD WRAPPER
+             - min-w-[85vw]: ensures the card is large but shows a 'peek' of the next one
+             - snap-center: makes the card 'click' into the middle of the screen
+          */
+          <div
+            key={project.id}
+            className="min-w-[85vw] md:min-w-100 snap-center"
+          >
+            <ProjectCard
+              id={project.id}
+              title={project.title}
+              githubLink={project.link}
+              image={project.image}
+              description={project.desc}
+            />
+          </div>
+        ))}
+
+        {/* Invisible spacer at the end to allow the last card to center correctly */}
+        <div className="min-w-[5vw] shrink-0"></div>
+      </div>
+      <div className="flex justify-center items-center gap-2 mt-4">
+        {projectData.map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full ${
+              index === activeIndex ? "bg-white" : "bg-gray-600"
+            } transition-colors duration-300`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

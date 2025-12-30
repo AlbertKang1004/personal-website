@@ -7,11 +7,11 @@ export default function Header(): React.ReactElement {
         <a href="#main-page">
           Main
         </a>
-        <a href="#about-me">
-          About
-        </a>
         <a href="#projects-container">
           Projects
+        </a>
+        <a href="#career">
+          Career
         </a>
         <a href="#contact">
           Contact

@@ -10,10 +10,10 @@ export default function App(): React.ReactElement {
   return (
     <div className="min-h-screen text-white bg-gray-900">
       <Header />
-      <main className="bg-gray-900">
+      <main className="">
         <MainPage />
-        <Career />
         <Projects />
+        <Career />
         <Contacts />
         <Footer />
       </main>

@@ -54,7 +54,7 @@ const getTimelineColors = (index: number, total: number) => {
 
 export default function Career() {
   return (
-    <div id="about-me" className="min-h-screen pt-20 px-5 max-w-4xl mx-auto">
+    <div id="career" className="min-h-screen py-20 px-5 bg-neutral-900">
       {TimelineData.map((timeline, index) => {
         const total = TimelineData.length;
         const isLast = index === total - 1;

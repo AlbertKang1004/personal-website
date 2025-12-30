@@ -15,21 +15,21 @@ const SkillData: Skill[] = [
   { icon: "python", text: "Python" },
   { icon: "java", text: "Java" },
   { icon: "tailwindcss", text: "Tailwind" },
+  { icon: "vite", text: "Vite" },
   { icon: "numpy", text: "NumPy" },
   { icon: "pandas", text: "Pandas" },
   { icon: "git", text: "Git" },
   { icon: "github", text: "GitHub" },
   { icon: "r", text: "R" },
-  { icon: "typescript", text: "TypeScript" },
-  { icon: "vscode", text: "VS Code" },
-  { icon: "visualstudio", text: "Visual Studio" },
+  { icon: "typescript", text: "TypeScript" }
 ];
 
 export default function MainPage(): React.ReactElement {
   return (
     <div
       id="main-page"
-      className="px-5 bg-linear-to-tl from-[#1a0b2e] to-black grid grid-rows-[1fr_1fr_2fr] justify-center h-screen pt-16"
+      className="grid grid-rows-[1fr_1fr_2fr] min-h-screen lg:min-h-[70vh] justify-center
+      px-5 pt-16 bg-linear-to-tr from-black to-[#270241]"
     >
       {/* Title + Description of Main Page */}
       <div className="self-end font-title text-7xl font-extrabold">
@@ -38,7 +38,7 @@ export default function MainPage(): React.ReactElement {
         KANG
       </div>
       <div className="font-desc text-xl font-light text-gray-400 pt-4 uppercase">
-        Software Developer | Computer Science Specialist in University of
+        Software Developer |<br />Computer Science Specialist at the University of
         Toronto
       </div>
       <div className="self-center flex flex-wrap gap-2 h-fit justify-center w-full">
