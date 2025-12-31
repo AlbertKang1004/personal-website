@@ -1,5 +1,8 @@
 import React, { useRef } from "react";
 import ProjectCard from "../ui/ProjectCard.js";
+import MazeSolverImg from "../../assets/img/mazesolver-screenshot.png";
+import CourseClashImg from "../../assets/img/courseclash-screenshot.png";
+import PersonalWebsiteImg from "../../assets/img/personalwebsite-screenshot.png";
 
 type Project = {
   id: string;
@@ -11,32 +14,32 @@ type Project = {
 
 const projectData: Project[] = [
   {
-    id: "mazesolver",
-    title: "MazeSolver",
-    link: "https://github.com/AlbertKang1004/MazeSolver",
-    image: "img/mazesolver-screenshot.png",
-    desc: "A Python program that uses Depth-First Search to find the best solution for a maze, including mazes with multiple solutions.",
-  },
-  {
     id: "courseclash",
     title: "CourseClash",
     link: "https://github.com/404Haze/CourseClash",
-    image: "img/courseclash-screenshot.png",
+    image: CourseClashImg,
     desc: "An interactive educational quiz-based application designed to help students study course material.",
   },
   {
     id: "personal-website",
     title: "Personal Website",
     link: "https://github.com/AlbertKang1004/personal-website",
-    image: "img/personal-website-screenshot.png",
+    image: PersonalWebsiteImg,
     desc: "A portfolio site built with Vite and React to showcase my work.",
+  },
+  {
+    id: "mazesolver",
+    title: "MazeSolver",
+    link: "https://github.com/AlbertKang1004/MazeSolver",
+    image: MazeSolverImg,
+    desc: "A Python program that uses Depth-First Search to find the best solution for a maze, including mazes with multiple solutions.",
   },
   {
     id: "money-laundry",
     title: "Money Laundry",
     link: "https://github.com/YehyunLee/big-data-ai-2026",
     image: "img/money-laundry-screenshot.png",
-    desc: "A description of your money management project.",
+    desc: "In Progress: A machine learning project to detect money laundering activities using transaction data.",
   },
 ];
 
@@ -55,7 +58,10 @@ export default function Projects(): React.ReactElement {
   };
 
   return (
-    <div id="projects-container" className="flex flex-col justify-center bg-black pt-16 h-screen">
+    <div
+      id="projects-container"
+      className="flex flex-col justify-center bg-black pt-16 lg:pb-16 h-screen lg:h-fit"
+    >
       {/* THE SLIDER WINDOW 
           - flex: puts cards in a row
           - overflow-x-auto: enables horizontal swiping
@@ -74,7 +80,7 @@ export default function Projects(): React.ReactElement {
           */
           <div
             key={project.id}
-            className="min-w-[85vw] md:min-w-100 snap-center"
+            className="min-w-[85vw] md:min-w-100 snap-always snap-center"
           >
             <ProjectCard
               id={project.id}

@@ -21,13 +21,13 @@ export default function ProjectCard({ id, title, githubLink, image, description 
           <img 
             src={image} 
             alt={`${title} preview`} 
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
           />
         </div>
       )}
 
       {/* 2. Content Area */}
-      <div className="p-5 flex flex-col flex-grow">
+      <div className="p-5 flex flex-col grow">
         {/* Title */}
         <div className="flex justify-between items-start mb-3">
           <h3 className="text-xl font-title font-bold tracking-tight text-white">
@@ -36,7 +36,7 @@ export default function ProjectCard({ id, title, githubLink, image, description 
         </div>
 
         {/* Description - flex-grow ensures the button stays at the bottom */}
-        <p className="text-neutral-400 text-sm leading-relaxed flex-grow">
+        <p className="text-neutral-400 text-sm leading-relaxed grow">
           {description}
         </p>
 
