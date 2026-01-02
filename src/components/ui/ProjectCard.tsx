@@ -8,13 +8,22 @@ type ProjectCardProps = {
   githubLink: string;
   image?: string;
   description: string;
+  inProgress?: boolean;
 };
 
-export default function ProjectCard({ id, title, githubLink, image, description }: ProjectCardProps): React.ReactElement {
+export default function ProjectCard({ id, title, githubLink, image, description, inProgress }: ProjectCardProps): React.ReactElement {
   return (
     /* h-full ensures all cards in the slider have the same height if the parent is a flex container */
-    <div className="w-full h-full bg-neutral-900 text-neutral-200 rounded-lg border border-neutral-800 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col">
-      
+    <div className={`relative w-full h-full bg-neutral-900 text-neutral-200 rounded-lg border 
+    ${inProgress ? "border-neutral-600 border-8": "border-neutral-800"}
+    overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col`}>
+      <div className="absolute top-3 right-3">
+        {inProgress && (
+          <span className="bg-neutral-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+            In Progress
+          </span>
+        )}
+      </div>
       {/* 1. Project Image Container */}
       {image && (
         <div className="w-full h-48 overflow-hidden border-b border-neutral-800">
@@ -35,7 +44,7 @@ export default function ProjectCard({ id, title, githubLink, image, description 
           </h3>
         </div>
 
-        {/* Description - flex-grow ensures the button stays at the bottom */}
+        {/* Description - grow ensures the button stays at the bottom */}
         <p className="text-neutral-400 text-sm leading-relaxed grow">
           {description}
         </p>
