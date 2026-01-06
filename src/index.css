@@ -5,6 +5,7 @@
   --font-sans: 'Open Sans', sans-serif;
   --font-title: 'Lexend', sans-serif;
   --font-desc: 'Montserrat', sans-serif;
+  --font-label: 'Baloo 2', sans-serif;
 
   --text-5xl: 3rem;     /* 48px */
   --text-6xl: 3.75rem;  /* 60px */
@@ -22,6 +23,18 @@
   .no-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+  }
+  .border-progress {
+    border-width: 8px; /* Thickness of the tape */
+    border-style: solid;
+    border-image-source: repeating-linear-gradient(
+      45deg,
+      #facc15, /* Tailwind yellow-400 */
+      #facc15 10px,
+      #000 10px,
+      #000 20px
+    );
+    border-image-slice: 1;
   }
 }
 

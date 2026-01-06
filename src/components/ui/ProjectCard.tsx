@@ -17,9 +17,9 @@ export default function ProjectCard({ id, title, githubLink, image, description,
     <div className={`relative w-full h-full bg-neutral-900 text-neutral-200 rounded-lg border 
     ${inProgress ? "border-neutral-600 border-8": "border-neutral-800"}
     overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col`}>
-      <div className="absolute top-3 right-3">
+      <div className="z-10 absolute top-3 right-3">
         {inProgress && (
-          <span className="bg-neutral-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+          <span className="bg-neutral-600 text-white text-lg font-label font-semibold px-2 py-1 rounded-full">
             In Progress
           </span>
         )}
